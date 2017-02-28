@@ -1,32 +1,17 @@
 ## Simulation and Serious Games
 
-You can use the [editor on GitHub](https://github.com/dc21696/dc21696.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+In this website, you will find documentation of some of my **Simulation and Serious Games projects 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Team Game Prototype Overview
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
+The point of the application is to sort team members and create the "perfect" team based on skills and values. 
 
-# Header 1
-## Header 2
-### Header 3
+The overview of our  application is to follow a specific path for individual users to follow based on their choices. The users start by seeings two doors. On top of these doors, there are blocks that contain text. Each text represents a specific skill in which the user has to decide which one is more important. As soon as they enter the door they believe is under the most important skill, they are given more paths to take. It could be scenarios or skills. After entering more doors, they are welcomed with other team members who share the same values. Since this is a porotype, it lacks the servers needed to connect other users and see how well this application works. Furthermore, this is not taking in consideration **specific** reasons on why a team should be assembled as such. For example, maybe a team will get stuck with programmers for a game that requires more than just on job description. There needs to be a way to sort teams not just by skills, but in terms of what the team actually needs to finish the job. What it does strongly is allow players to visually see what paths they take. This evolved from the mindset of the classic job application. Rather, it is a overglorified version of a job applcation's questionaire. In terms of our prototype, I am pretty sure it works well. 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
