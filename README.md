@@ -25,10 +25,21 @@ In terms of our prototype, I am pretty sure it works well.
 ```
 
 
-### Jekyll Themes
+### Memory Game
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dc21696/dc21696.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```markdown
 
+The point of this project is to create a simple way for students to memorize terms used in our class for a test.
+Our projected initially started as a simple tabletop game. However, the game slowly started to get a little complicated. 
+In turn, there was some value loss at the memory portion of the game. Our memory game basically went full RPG.
+Players used customization to create a specific character. Theses skills are play-on-words for the terms. 
+Once the player decides what skils to use, they are required to go through specific scenarios and dialogue. 
+Again, these dialogues contain the terms used in class, including examples and context clues. It worked well for an RPG.
+However, as a memory game, it did flop a bit. Still, it was a good experience as the game has so much potential.
+With a little work on the art and a clear understanding of the directions, the game could evolve a lot more. 
+
+
+```
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
