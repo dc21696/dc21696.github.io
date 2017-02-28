@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Simulation and Serious Games
 
 You can use the [editor on GitHub](https://github.com/dc21696/dc21696.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
