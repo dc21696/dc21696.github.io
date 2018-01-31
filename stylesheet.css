@@ -2,7 +2,7 @@ html, body {
 	margin:0px;
 	padding:0px;
   height:7200px;
-  wdith: 100%;
+  width: 100%;
   background: -webkit-linear-gradient(top, #00111e 30%, #033d5e,#33CCFF,#ADEBFF );
 	-webkit-background-size:cover;
 	background-repeat: no-repeat;
