@@ -1,0 +1,88 @@
+@charset "utf-8";
+body {
+	background-color: #FCE1FA;
+}
+#header {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+#header h1 {
+		font-family: 'Share Tech Mono', monospace;
+	color : mediumpurple;
+	position: relative;
+	top: 50%;
+	width: 321px;
+	margin-top: 56px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
+	border-right: .05px solid rgba(255,255,255,.75);
+	font-size: 300%;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);
+}
+
+
+#main {
+	width: 955px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-image: url(macbook.png);
+	background-position: 68% 131%;
+	height: 584px;
+	background-repeat: no-repeat;
+}
+
+#footer {
+	margin-top: 137px;
+	background-color: #000000;
+	margin-left: auto;
+	margin-right: auto;
+	background-clip: border-box;
+	background-attachment: scroll;
+}
+#footer p {
+	color: #FFFFFF;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	font-style: oblique;
+	font-weight: bold;
+	font-size: large;
+	margin-left: -70px;
+	text-align: center;
+}
+#header h1 img {
+	float: none;
+	clear: none;
+
+}
+#header .typefont.anim-typewriter {
+	margin-top: -35px;
+}
+
+
+#main p {
+	padding-left: 90px;
+	padding-right: 112px;
+	padding-top: 30px;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+}
+
+.anim-typewriter{
+  animation: typewriter 2s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(10) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 360px;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: mediumpurple}
+  to{border-right-color: transparent;}
+}
