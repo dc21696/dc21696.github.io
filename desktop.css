@@ -1,6 +1,14 @@
 @charset "utf-8";
 body {
 	background-color: #FCE1FA;
+	float: none;
+}
+.Backgroundim {
+	z-index: -1;
+	float: none;
+	background-image: url(macbook-updated.png);
+	height: 0px;
+	background-size: contain;
 }
 #header {
 	width: auto;
@@ -26,18 +34,29 @@ body {
 	overflow: hidden;
 	transform: translateY(-50%);
 }
-
-
+.container {
+    position: relative;
+    color: black;
+}
+.centered {
+	font-family: 'Share Tech Mono', monospace;
+	position: absolute;
+	top: 40%;
+	left: 41%;
+	font-size: 2vw;
+	transform: translate(-50%, -50%);
+	list-style-position: inside;
+	line-height: 1vw;
+}
 #main {
-	width: 955px;
+	width: auto;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	background-image: url(macbook.png);
-	background-position: 68% 131%;
-	height: 584px;
+	background-size: auto 100%;
 	background-repeat: no-repeat;
+	left: 96%;
 }
 
 #footer {
@@ -66,13 +85,26 @@ body {
 	margin-top: -35px;
 }
 
-
 #main p {
-	padding-left: 90px;
-	padding-right: 112px;
+	padding-left: 217px;
+	padding-right: 221px;
 	padding-top: 30px;
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	background-size: contain;
 }
+.var {
+	color:blue;
+}
+.this{
+	color: red;
+}
+.numbers{
+	color:#008BC4;
+}
+.greenText{
+	color:#009B00;
+}
+
 
 .anim-typewriter{
   animation: typewriter 2s steps(44) 1s 1 normal both,
