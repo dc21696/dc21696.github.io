@@ -48,17 +48,6 @@ body {
 	list-style-position: inside;
 	line-height: 1vw;
 }
-#main {
-	width: auto;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	left: 96%;
-}
-
 #footer {
 	margin-top: 137px;
 	background-color: #000000;
