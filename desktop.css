@@ -21,7 +21,7 @@ body {
 	color : mediumpurple;
 	position: relative;
 	top: 50%;
-	width: 321px;
+	width: 400px;
 	margin-top: 56px;
 	margin-right: auto;
 	margin-left: auto;
@@ -96,7 +96,7 @@ body {
 
 
 .anim-typewriter{
-  animation: typewriter 2s steps(44) 1s 1 normal both,
+  animation: typewriter 2s steps(400) 1s 1 normal both,
              blinkTextCursor 500ms steps(10) infinite normal;
 }
 @keyframes typewriter{
