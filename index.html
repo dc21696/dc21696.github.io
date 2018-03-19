@@ -1,64 +1,262 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" >
+
 <head>
-<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
+  <meta charset="UTF-8">
+  <title>danielcaneda.com</title>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.3/dist/interact.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 
-<title>Daniel Caneda</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="css/style.css">
+
+  
 </head>
-<div class="ct" id="t1">
-  <div class="ct" id="t2">
-    <div class="ct" id="t3">
-      <div class="ct" id="t4">
-         <div class="ct" id="t5">
-          <ul id="menu">
-            <a href="#t1"><li class="firstIcon" id="one"></li></a>
-            <a href="#t2"><li class="secondIcon" id="two"></li></a>
-            <a href="#t3"><li class="thirdIcon" id="three"></li></a>
-            <a href="#t4"><li class="fourthIcon" id="four"></li></a>
-            <a href="#t5"><li class="fifthIcon" id="five"></li></a>
-          </ul>
-          <div class="page" id="p1">
-             <section class="icon windowscreen"><span class="title" >Daniel Caneda</span><span class="hint background-img">Hello World!<br> Click Navigation Icons on the side to explore</span></section>
-          </div>
-          <div class="page" id="p2">
-            <section class="icon fa fa-keyboard-o"><span class="title">Resume</span></section>
-          </div>  
-          <div class="page" id="p3">
-            <section class="icon fa fa-rocket"><span class="title">Projects</span></section>
-          </div>
-          <div class="page" id="p4">
-            <section class="icon fa fa-dribbble">
-              <span class="title">I Do Other Stuff!</span>
-              <p class="hint">
-            </section>
-          </div> 
-          <div class="page" id="p5">
 
-            <section class="icon fa fa-plus-circle">
-              <span class="title">If(Interested) </span>
-              <p class="hint">
-                <span>Check Me Out! </span><br/>
-                <a href="github.com" target="_blank">GitHub</a>
-				<a href="facebook.com" target="_blank">Facebook</a>
-				<a href="caneda.daniel@gmail.com" target="_blank">Email Me</a>
+<body>
 
-              </p>
-							
+  <head>
+</head>
+<body>
 
-            </section>
-          </div> 
-        </div>
-      </div>
+  <div class= "centered"> <h1>Hi.</h1>
+  </div>
+
+  <div id="container">
+    <div id="dock">
+      <ul>
+				<li>
+          <span>Finder</span> <a href="#"><img src=
+          "https://upload.wikimedia.org/wikipedia/en/4/45/Mac_Finder_icon_%28OS_X_Yosemite%29.png">
+          </a>
+        <li>
+          <span>Terminal</span> <a class="taskbar__item taskbar__item--terminal" data-window="terminal"><img src=
+          "https://upload.wikimedia.org/wikipedia/commons/b/b3/Terminalicon2.png">
+          </a>
+        </li>
+        <li>
+          <span>Contact</span> <a class="taskbar__item taskbar__item--notepad" data-window="notepad"><img src=
+          "http://icons.iconarchive.com/icons/johanchalibert/mac-osx-yosemite/512/contacts-icon.png"></a>
+        </li>
+        <li>
+          <span>Codepen</span> <a class="taskbar__item taskbar__item--codepen" data-window="codepen"><img src=
+          "https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-White-Large.png"></a>
+        </li>
+        <li>
+          <span>Video</span> <a class="taskbar__item taskbar__item--video" data-window="video"><img src=
+          "https://assets.materialup.com/uploads/7151ca20-3c53-4c6c-bd82-d38a1916bd2f/512x512bb-85.png"></a>
+        </li>
+				<li>
+          <span>Projects</span> <a class="taskbar__item taskbar__item--folder" data-window="folder"><img src=
+          "http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/512/Folder-icon.png"></a>
+        </li>
+				<li>
+          <span>iTunes</span> <a href="#"><img src=
+          "https://forums.macrumors.com/attachments/itunes-1024x1024-png.565323/"></a>
+        </li>
+      </ul>
     </div>
   </div>
+
+  <div class= "navigation-top"> 
+  <ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+  
+  </div>
+<div class= "fadewindows">
+  <div class="window window--video window--minimized" data-window="video" style="width:500px;height:315px;top:30%;left:3%;">
+    <div class="window__titlebar">
+      <div class="window__controls window__controls--left">
+      </div>
+
+      <span class="window__title">
+        Video
+      </span>
+      
+      <div class="window__controls window__controls--left">
+                  <a class="window__close"></a>
+
+        <a class="window__minimize"></a>
+        <a class="window__disabled"></a>
+      </div>
+    </div>
+    
+    <div class="window__body black">
+      <!--<video id="video" controls preload="auto" data-setup='' controlsList="nodownload" onClick="playPause();">
+<source src="http://downloads.paramount.com/kaltura/content/r71v1/entry/data/354/854/0_buycdmn8_0_ygksx8j3_2.mp4" type='video/mp4'>
+</video>-->
+        
+        
+        <div id = "video_gallery">
+<h1 class = "gallery_style">Videos</h1>
+	<div class = "responsive">
+	<iframe align= "middle" width="560" height="315" src="https://www.youtube.com/embed/QwH5r7JjA7E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/6bAJrHpoEZM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/U8c35Jj8Wo8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wOBi0fj3qHw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_LeGNK0ewYA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+		
+</div>
+      
+      
+      </div>
+    
+  </div>
+    
+ <div class="window window--folder window--minimized" data-window="folder" style="width:450px;height:310px;top:15%;left:40%;">
+    <div class="window__titlebar">
+      <div class="window__controls window__controls--left">
+      </div>
+
+      <span class="window__title">
+        Projects
+      </span>
+      
+      <div class="window__controls window__controls--left">
+                  <a class="window__close"></a>
+
+        <a class="window__minimize"></a>
+        <a class="window__disabled"></a>
+      </div>
+    </div>
+    <div class="window__body">
+      <div class="window__main">
+          <h3>Games</h3>
+          <p>Current Project:<br><a href="http://aiku-game.com">Aiku</a> - Programmer and Web Designer<br> My role for this game was to create features for the game's character levels. Including but not limited to: a working modular Padlock, an affected rotated level based on the Padlock, and an examination script that allows the player to examine and rotate/zoom the gameobject. I also built the website for the game (including the title sequence for the name)</p>
+          <p>Backlog Project:<br><a href="https://youtu.be/IO2JpI2G4_I">Depression Simulator</a>- Level Designer and Programmer<br>This project was a class assignment that focused on simulating real life issues. It's a work in progress and a two people project.</p>                    
+          <h3>Websites</h3>
+          <p>Current Project:<br><a href="http://aiku-game.com">Aiku</a> - Front End and Web Designer<br> Website built for the current game we are working on for Large Team.</p>
+          <p><a href="https://hearsewithnoname.github.io/">A Hearse With No Name</a>- Front End and Web Designer<br> A one day project for a game for a friend.</p>                    
+          <p><a href="http://danielcaneda.com">DanielCaneda.com</a> - Front End and Web Designer<br> This website. My portfolio site built to display my work. A work in progress.<br>.</p>
+
+      </div>
+    </div>
+    
+  </div>
+     <div class="window window--notepad window--minimized" data-window="notepad" style="width:400px;height:300px;top:10%;left:30%;">
+    <div class="window__titlebar">
+      <div class="window__controls window__controls--left">
+      </div>
+
+      <span class="window__title">
+        Contact
+      </span>
+      
+      <div class="window__controls window__controls--left">
+                  <a class="window__close"></a>
+
+        <a class="window__minimize"></a>
+        <a class="window__disabled"></a>
+      </div>
+    </div>
+    <div class="window__body">
+      <div class="window__main ">
+                    <h3>Contact Me</h3>
+          
+          <p><img src="responsive-headshot.png" height="150px" width="150px" style="float: left ">Name: Daniel Caneda</p>
+          <hr/><span class="address-sequence">mobile</span> <a href="tel:773-964-7440">773-964-7440</a>
+
+          <hr/><span class="address-sequence">email</span> <a href="mailto: caneda.daniel@gmail.com">caneda.daneil@gmail.com</a>
+        <hr/><span class="address-sequence">home</span> Chicago Illinois
+
+
+
+      </div>
+    </div>
+    
+  </div>
+
+    
+<div class="window window--terminal" data-window="terminal" style="width:600px;height:400px;top:20%;left:35%;">
+    <div class="window__titlebar">
+      <div class="window__controls window__controls--left">
+      </div>
+    
+      <span class="window__title">
+        Terminal
+      </span>
+      
+      <div class="window__controls window__controls--left">
+                  <a class="window__close"></a>
+
+        <a class="window__minimize"></a>
+        <a class="window__disabled"></a>
+      </div>
+    </div>
+    
+    <div class="window__body black">
+        <p>Thank you for meeting me at GDC!  <br>
+        My name is Daniel Caneda
+        <br>I am a Video Game Programmer
+        <br>and a Front End Developer!
+        <br>Please check out this website to check out my work!</p>
+
+        
+
+    </div>
+  </div>
+  
+  <div id="netConnected" class="notification">
+  <div class="icon"><span class="fa fa-wifi"></span></div>
+  Connected to <b>saaNet</b>
 </div>
 
 
+<div id="spectreIso" class="file">
+  <div class="icon"><span class="fa fa-file-archive-o"></span></div>
+  <div class="name">spectre.iso</div>
+</div>
+<div id="spectreExo" class="file exe">
+  <div class="icon"><span class="fa fa-cogs"></span></div>
+  <div class="name">Spectre.exe</div>
+</div>
+  
 
-<body>
+
+<div class="context" hidden>
+  <div class="context_item">
+    <div class="inner_item">
+      Thank
+    </div> 
+  </div>
+  <div class="context_item"> 
+    <div class="inner_item">
+      You
+    </div> 
+  </div>
+  <div class="context_item"> 
+    <div class="inner_item">
+      For
+    </div> 
+  </div>
+  <div class="context_hr"></div>
+  <div class="context_item"> 
+    <div class="inner_item">
+      Visiting!
+    </div> 
+  </div>
+</div> 
+    </div>
+
 </body>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.rawgit.com/desandro/masonry/master/dist/masonry.pkgd.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
 </html>

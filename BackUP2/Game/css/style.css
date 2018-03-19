@@ -1,0 +1,184 @@
+body{
+  background-color:black;
+}
+.responsive{
+	width:100%;
+	height:auto;
+    position: relative;
+
+	
+}
+
+.wrapper {
+    transform: rotate(-90deg);
+
+
+}
+
+.move{
+      position: absolute;
+
+}
+@keyframes move {
+  0%{
+    transform: rotate(-90deg);
+  }
+  100%{
+          transform: rotate(-90deg);
+
+    position: absolute;
+    z-index: 2;
+    right: 30px;
+    width:9vw;
+    height: 4vw;
+    top:10vw;
+
+  }
+}
+
+.sq {
+  border: .1vw solid black;
+  width: 5vw;
+  height: 8vw;
+  display: inline-block;
+  opacity: 1;
+  background-color: grey;
+  transform: skewX(20deg);
+
+
+}
+
+@keyframes sq1 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: .25;
+  }
+  50% {
+    opacity: .5;
+  }
+  75% {
+    opacity: .75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  background-color: skyblue;
+      box-shadow: 0px 0px 49px  #0ff;
+
+}
+.lin1{
+    animation: loader-inner 1s 1s ease-in;
+      animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+
+}
+.lin2{
+      animation: loader-inner 1s 1s ease-in;
+      animation-delay: 1s;
+  animation-fill-mode: forwards;
+
+
+
+}
+.lin3{
+        animation: crap-shoot 2s 1s ease-out;
+        animation-delay: 2s;
+  animation-fill-mode: forwards;
+
+}
+@keyframes crap-shoot {
+    0% {
+    width: 0%;
+  }  
+  
+  50% {
+    width: 100%;
+  }
+  90%
+  {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+
+}
+@keyframes loader-inner {
+  0% {
+    width: 0%;
+
+
+  }
+  
+  25% {
+    width: 25%;
+  }
+  
+  50% {
+    width: 50%;
+  }
+  
+  75% {
+    width: 75%;
+  }
+  
+  100% {
+    width: 100%;
+  }
+}
+
+svg{
+	animation: grow 2s 1s ease-out;
+   animation-delay: 6s;
+  animation-fill-mode: forwards;
+	 opacity:0;
+    width:100%;
+    position: relative;
+
+
+
+}
+@keyframes grow {
+  0% {
+	 opacity:0;
+
+
+  }
+  100% {
+ opacity:100;
+
+  }
+}
+
+.square{
+   
+    position: absolute;
+    top: 50%;
+    right:40%;
+    animation: movepartrwo 2s 6s ease-out forwards;
+        width: 20vw;
+
+
+}
+
+@keyframes movepartrwo{
+    
+    0%{
+        
+    }
+    100%
+    {top: 8vw;
+    right:1vw;
+    }
+}
+
