@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, height=device-height">
 
 
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/style.css?v3">
 
   
 </head>
@@ -58,12 +58,20 @@
   </div>
 
   <div class= "navigation-top"> 
-  <ul>
+  <ul class= "window-size">
   <li><a href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
 </ul>
+      
+        <ul class= "mobile-size">
+  <li><a>AT&#38;T</a></li>
+  <li style="margin-left: 32.5%;"><a id="timer"></a></li>
+
+  <li style="float:right;"><a>Battery:100%</a></li>
+</ul>
+
   
   </div>
     
@@ -71,7 +79,7 @@
     
     
 <div class= "fadewindows">
-  <div class="window window--video window--minimized" data-window="video" style="width:500px;height:315px;top:30%;left:3%;">
+  <div class="window window--video window--minimized" data-window="video">
     <div class="window__titlebar">
       <div class="window__controls window__controls--left">
       </div>
@@ -106,10 +114,17 @@
       
       
       </div>
+                <div class="home-menu">
+      <div class="window__controls">
+        <a class="window__close"></a>
+              </div>
+
+    </div>  
+
     
   </div>
     
- <div class="window window--folder window--minimized" data-window="folder" style="width:450px;height:310px;top:15%;left:40%;">
+ <div class="window window--folder window--minimized" data-window="folder">
     <div class="window__titlebar">
       <div class="window__controls window__controls--left">
       </div>
@@ -136,10 +151,17 @@
           <p><a href="https://danielcaneda.com">DanielCaneda.com</a> - Front End and Web Designer<br> This website. My portfolio site built to display my work. A work in progress.<br>.</p>
 
       </div>
+                  <div class="home-menu">
+      <div class="window__controls">
+        <a class="window__close"></a>
+              </div>
+
+    </div>  
+
     </div>
     
   </div>
-     <div class="window window--notepad window--minimized" data-window="notepad" style="width:400px;height:300px;top:10%;left:30%;">
+     <div class="window window--notepad window--minimized" data-window="notepad">
     <div class="window__titlebar">
       <div class="window__controls window__controls--left">
       </div>
@@ -169,6 +191,13 @@
 
       </div>
     </div>
+                   <div class="home-menu">
+      <div class="window__controls">
+        <a class="window__close"></a>
+              </div>
+
+    </div>  
+
     
   </div>
 
@@ -195,14 +224,18 @@
         My name is Daniel Caneda
         <br>I am a Video Game Programmer
         <br>and a Front End Developer!
-        <br>Please check out this website to check out my work!</p>
+        <br>Please check out this website to check out my work!
+        <br>PS: Test this out on mobile and on browser!
+            <br> There are still things I need to iron out.
+            <br>I hope you enjoy!
+        </p>
 
         
 
     </div>
           <div class="home-menu">
       <div class="window__controls">
-        <a class="window__minimize"></a>
+        <a class="window__close"></a>
               </div>
 
     </div>  
@@ -255,7 +288,7 @@
 
   
 
-    <script  src="js/index.js"></script>
+    <script  src="js/index.js?v3"></script>
 
 
 
