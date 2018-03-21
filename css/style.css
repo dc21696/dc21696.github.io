@@ -1037,6 +1037,14 @@ hr {
     left:35%;
 }
 
+.home-menu{
+    background-color: white;
+    height: 200px;
+    width:200px;
+    z-index: 1000000;
+    
+}
+
 
     @media only screen and (max-width: 760px) {
         
