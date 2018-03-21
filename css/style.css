@@ -379,6 +379,7 @@ video {
 
 .fadewindows{
         opacity: 0;
+    overflow: hidden;
 
             animation: startingwindow 1s 5s linear forwards;
 
