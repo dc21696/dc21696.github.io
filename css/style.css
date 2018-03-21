@@ -13,6 +13,7 @@ background-size: 1000% 1000%;
 -webkit-animation: onload 4s ease forwards;
 -moz-animation: onload 4s ease forwards;
 animation: onload 4s ease forwards;
+    overflow: hidden;
 
 }
 @-webkit-keyframes onload {
@@ -179,14 +180,14 @@ transform: translate(-50%, -400%);
   position: fixed;
   bottom: 0;
   text-align: center;
-  right: 20%;
-  left: 30%;
-  width: 40%;
+  right: 25%;
+  left: 25%;
+  width: 50%;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 10px 10px 0 0;
     animation: unhide-dock 1s 3s linear forwards;
 
-  
+  z-index: 99999;
   
 }
 
@@ -197,61 +198,12 @@ transform: translate(-50%, -400%);
 }
 
 #container li img {
-  width: 50px;
-  height: 50px;
+  width: 7vh;
+  height: 7vh;
   -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, .5)));
   -webkit-transition: all 0.3s;
   -webkit-transform-origin: 40% 70%;
 }
-
-@media only screen and (max-width: 1280px) {
-
-
-    #container li img {
-  width: 30px;
-  height: 30px;
-  -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, .5)));
-  -webkit-transition: all 0.3s;
-  -webkit-transform-origin: 40% 70%;
-
-    }
-        
-        #container li:hover img {
-  -webkit-transform: scale(1.2);
-  margin: 0 2em;
-}
-    #container li:hover+li img,
-#container li.prev img {
-  -webkit-transform: scale(1.5);
-  margin: 0 .5em;
-}
-
-
-}
-
-    @media only screen and (max-width: 300px) {
-            #container li img {
-  width: 20px;
-  height: 20px;
-  -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, .5)));
-  -webkit-transition: all 0.3s;
-  -webkit-transform-origin: 40% 70%;
-
-    }
-                
-        #container li:hover img {
-  -webkit-transform: scale(1.2);
-  margin: 0 2em;
-}
-    #container li:hover+li img,
-#container li.prev img {
-  -webkit-transform: scale(1.5);
-  margin: 0 .5em;
-}
-
-
-}
-
 
 #container li:hover img {
   -webkit-transform: scale(2);
@@ -263,6 +215,75 @@ transform: translate(-50%, -400%);
   -webkit-transform: scale(1.5);
   margin: 0 1.5em;
 }
+
+@media only screen and (max-width: 1280px) {
+            #container li img {
+  width: 7vh;
+  height: 7vh;
+  -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, .5)));
+  -webkit-transition: all 0.3s;
+  -webkit-transform-origin: 40% 70%;
+
+    }
+
+        
+   #container li:hover img {
+  -webkit-transform: scale(1.5);
+  margin: 0 1em;
+}
+
+#container li:hover+li img,
+#container li.prev img {
+  -webkit-transform: scale(1.15);
+  margin: 0 .5em;
+}
+     
+  
+
+
+}
+
+    @media only screen and (max-width: 760px) {
+        body{
+        }
+        
+        #container {
+    height:10%;
+  position: fixed;
+  bottom: 0;            
+            left:0;
+  text-align: center;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px 10px 0 0;
+    animation: unhide-dock 1s 3s linear forwards;
+z-index: 0;
+  
+  
+}
+        
+    
+#container li:hover img {
+      -webkit-transform: scale(1);
+  margin: 0 .1em;
+
+}
+        
+
+#container li:hover+li img,
+#container li.prev img {
+          -webkit-transform: scale(1);
+  margin: 0 .1em;
+
+    
+}
+
+
+
+}
+
+
+
 
 #container li span {
   display: none;
@@ -1004,4 +1025,57 @@ hr {
 .gallery_style{
     
     color:white;
+}
+
+
+
+.window--terminal{
+    
+    width:600px;
+    height:400px;
+    top:20%;
+    left:35%;
+}
+
+
+    @media only screen and (max-width: 760px) {
+        
+        .window {
+
+            width:100%;
+            height: 100%;
+        }
+        
+        .window--terminal{
+    
+    width:100%;
+    height:100%;
+    top:29px;
+    left:0;
+}
+        
+        .window__titlebar {
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  cursor: default;
+  background: black;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.25), inset 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.window__title {
+  position: relative;
+  line-height: 32px;
+  z-index: 10;
+  color: #777;
+  font-weight: 500;
+  text-shadow: 0 0 1px #9f9f9f;
+  transition: all .2s;
+}
+
+        
 }
