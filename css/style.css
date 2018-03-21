@@ -19,6 +19,8 @@ animation: onload 4s ease forwards;
 
 .mainWrapper{
         overflow: hidden;
+    width: 100%;
+    height:100%;
 
 }
 @-webkit-keyframes onload {
