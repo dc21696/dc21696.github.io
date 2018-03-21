@@ -16,6 +16,11 @@ animation: onload 4s ease forwards;
     overflow: hidden;
 
 }
+
+.mainWrapper{
+        overflow: hidden;
+
+}
 @-webkit-keyframes onload {
     0%{background-position:0% 50%}
       50%{background-position:0% 50%}
@@ -1038,10 +1043,16 @@ hr {
 }
 
 .home-menu{
-    background-color: white;
-    height: 200px;
-    width:200px;
-    z-index: 1000000;
+    background-color: transparent;
+    height: 50px;
+    width:50px;
+    bottom:30px;
+    z-index: 10000000000;
+    position:fixed;
+    right:50%;
+    display: block;
+    visibility: hidden;
+    
     
 }
 
@@ -1052,6 +1063,7 @@ hr {
 
             width:100%;
             height: 100%;
+            z-index: 0;
         }
         
         .window--terminal{
@@ -1060,6 +1072,7 @@ hr {
     height:100%;
     top:29px;
     left:0;
+            z-index: 0;
 }
         
         .window__titlebar {
@@ -1084,6 +1097,33 @@ hr {
   text-shadow: 0 0 1px #9f9f9f;
   transition: all .2s;
 }
+        
+        
+        
+        .home-menu{
+            visibility: visible;
+        }
+        
+        .home-menu .window__controls{
+            
+            width:100%;
+            height:100%;
+        }
+        
+        .home-menu .window__controls .window__minimize{
+            width:100%;
+            height:100%;
+            
+        }
+        
+        .home-menu .window__controls a.window__minimize::before {
+                background: white;
+                width:100%;
+            height:100%;
+            
+
+        }
+
 
         
 }
