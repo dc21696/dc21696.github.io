@@ -1,13 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis:200,600);
 
 
-body,html{
-        overflow: hidden;
-
-}
-
 
 body{
+    overflow: hidden;
 font-family: 'Dosis','Lato', sans-serif;
 
   width: 100%;
@@ -93,6 +89,7 @@ transform: translate(-50%, 100%);
   left: 50%;
   top: 0;
   transform: translate(-50%, -400%);
+  -webkit-transform: translate(-50%, -400%);
 
   position: fixed;
   background-color:darkgrey;
@@ -1050,7 +1047,7 @@ hr {
     z-index: 10000000000;
     position:fixed;
     right:50%;
-    display: block;
+    display: none;
     
     
 }
@@ -1098,7 +1095,7 @@ hr {
         
         
         .home-menu{
-            visibility: visible;
+            display: block;
         }
         
         .home-menu .window__controls{
