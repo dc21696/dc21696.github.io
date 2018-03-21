@@ -1053,7 +1053,6 @@ hr {
     position:fixed;
     right:50%;
     display: block;
-    visibility: hidden;
     
     
 }
@@ -1065,7 +1064,6 @@ hr {
 
             width:100%;
             height: 100%;
-            z-index: 0;
         }
         
         .window--terminal{
@@ -1074,7 +1072,6 @@ hr {
     height:100%;
     top:29px;
     left:0;
-            z-index: 0;
 }
         
         .window__titlebar {
