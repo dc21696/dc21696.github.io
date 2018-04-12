@@ -1,5 +1,13 @@
 // Window size
 $(function() {
+    
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ // some code..
+}else
+{
+//Now include js files
+
+
   var zIndex = 1;
 
   var fullHeight = $(window).height(),
@@ -163,7 +171,7 @@ $(function() {
       }
     });
   });
-}); 
+}}); 
 
 
 // Unfocus windows when desktop is clicked
@@ -224,3 +232,10 @@ else
 	 minutes = "0" + minutes;
   }
 document.getElementById('timer').innerHTML =hours + ":" + minutes;
+
+
+
+
+setTimeout(function(){
+  $('#intro').remove();
+}, 5000);
