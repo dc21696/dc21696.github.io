@@ -1,11 +1,6 @@
 // Window size
 $(function() {
     
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- // some code..
-}else
-{
-//Now include js files
 
 
   var zIndex = 1;
@@ -171,7 +166,7 @@ $(function() {
       }
     });
   });
-}}); 
+}); 
 
 
 // Unfocus windows when desktop is clicked
