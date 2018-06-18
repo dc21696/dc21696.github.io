@@ -21,9 +21,14 @@
 $(document).ready(function(){
     $("button").click(
       function() {
+          
+              
+          var userName = document.getElementById("usersName").value;
+          var userEmail = document.getElementById("usersEmail").value;
+
         var yourdomain = 'chattechsolutions.freshdesk.com'; // Your freshdesk domain name. Ex., yourcompany
         var api_key = 'Gb30TrNG1EhHoZIE11Q1'; // Ref: https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key
-        ticket_data = '{ "description": "If you see this, this means that I have successfully submitted a ticket using FreshDesk API using jQuery and CodePen as the host. By Default, it should say Atira Hotels! I am also testing urgency. Default should be set to medium", "subject": "jQuery API Testing: Success", "email": "daniel@chattechsolutions.com", "priority": 2, "status": 2, "type" : "Atira Hotels"}';
+        ticket_data = '{ "description": "If you see this, this means that I have successfully submitted a ticket using FreshDesk API using jQuery and CodePen as the host. By Default, it should say Atira Hotels! I am also testing urgency. Default should be set to medium", "subject": "jQuery API Testing: Success", "email": userEmail, "priority": 2, "status": 2, "type" : "Atira Hotels"}';
         $.ajax(
           {
             url: "https://chattechsolutions.freshdesk.com/api/v2/tickets",
@@ -55,30 +60,13 @@ $(document).ready(function(){
 </head>
 <body>
 
-<button>Create ticket</button>
-<br/></br>
-<table cellspacing = '10'>
-  <tr>
-    <td> <b>Result</b></td>
-    <td> <div id = 'result'></div> </td>
-  </tr>
-  <tr>
-    <td> <b>Code</b></td>
-    <td> <div id = 'code'></div> </td>
-  </tr>
-  <tr>
-    <td> <b>Response</b></td>
-    <td> <div id = 'response'></div> </td>
-  </tr>
-</table>
   
-    <h1 id="title" class="title">Atira Hotels</h1>
-
+      <img src = "Atira_WebLogo.png"/>
 <div class="support">
   <form>
     <div class="fieldgroup fieldgroup-name">
        <label>Name</label>
-       <input type="text" placeholder="Full Name" name="first"/>
+       <input type="text" placeholder="Full Name" name="first" required =""/>
     </div>
     <div class="fieldgroup fieldgroup-site">
        <label>Email</label>
@@ -101,11 +89,22 @@ $(document).ready(function(){
     <input type="submit" value="Submit Ticket" />
   </form>
 </div>
-</body>
-</html>
   
-  
+  <button>Create ticket</button>
+<br/>
+<table cellspacing = '10'>
+  <tr>
+    <td> <b>Result</b></td>
+    <td> <div id = 'result'></div> </td>
+  </tr>
+  <tr>
+    <td> <b>Code</b></td>
+    <td> <div id = 'code'></div> </td>
+  </tr>
+  <tr>
+    <td> <b>Response</b></td>
+    <td> <div id = 'response'></div> </td>
+  </tr>
+</table>
 
-</body>
 
-</html>
