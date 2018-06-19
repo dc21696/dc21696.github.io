@@ -38,6 +38,7 @@ h1 {
 .support select{
   padding:20px;
   font-size:13px;
+  width:70%;
   border:none;
   float:left;
   
