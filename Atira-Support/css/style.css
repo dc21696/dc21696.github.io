@@ -38,7 +38,7 @@ h1 {
 .support select{
   padding:20px;
   font-size:13px;
-  width:70%;
+  width:80%;
   border:none;
   float:left;
   
@@ -60,7 +60,7 @@ h1 {
   clear:both;
 }
 .fieldgroup-name input{
-  width:70%;
+  width:80%;
 }
 
 .support textarea{
@@ -83,7 +83,7 @@ button{
   -ms-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
-  width:70%;
+  width:80%;
     height: 60px;
 
 
