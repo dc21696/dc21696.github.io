@@ -31,14 +31,13 @@ h1 {
   padding:16px 0;
 }
 .support .fieldgroup{
-  margin-bottom:10px;
+  margin-bottom:5px;
 }
 .support input,
 .support textarea,
 .support select{
   padding:20px;
   font-size:13px;
-  width:550px;
   border:none;
   float:left;
   
@@ -60,7 +59,7 @@ h1 {
   clear:both;
 }
 .fieldgroup-name input{
-  width:550px;
+  width:70%;
 }
 
 .support textarea{
@@ -73,10 +72,9 @@ h1 {
   background:#0064FF;
   font-size:16px;
 }
-.support button{
-    
-      float:right;
+button{
   color:#fff;
+    display: block;
   font-weight:bold;
   background:#0064FF;
   font-size:16px;
@@ -84,7 +82,7 @@ h1 {
   -ms-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
-  width:550px;
+  width:70%;
     height: 60px;
 
 
