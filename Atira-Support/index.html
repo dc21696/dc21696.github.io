@@ -3,42 +3,52 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>A Pen by  Daniel</title>
+  <title>Atira Help Desk</title>
   
-  
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
       <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   
 </head>
 
-<body>
-
-  <html>
+<html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
     $("button").click(
       function() {
-          
-              
-          var userName = document.getElementById("usersName").value;
-          var userEmail = document.getElementById("usersEmail").value;
-
-        var yourdomain = 'chattechsolutions.freshdesk.com'; // Your freshdesk domain name. Ex., yourcompany
+        var yourdomain = 'chattechsolutions'; // Your freshdesk domain name. Ex., yourcompany
         var api_key = 'Gb30TrNG1EhHoZIE11Q1'; // Ref: https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key
-        ticket_data = '{ "description": "If you see this, this means that I have successfully submitted a ticket using FreshDesk API using jQuery and CodePen as the host. By Default, it should say Atira Hotels! I am also testing urgency. Default should be set to medium", "subject": "jQuery API Testing: Success", "email": userEmail, "priority": 2, "status": 2, "type" : "Atira Hotels"}';
+        
+          
+        var emailAddress = document.getElementById("email").value;
+        var describeIssue = document.getElementById("description").value;
+        var subjectLine = document.getElementById("subjectLine").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var userName = document.getElementById("userName").value;
+          
+        var formdata = new FormData();
+        formdata.append('description', describeIssue);
+        formdata.append('name', userName);
+        formdata.append('email', emailAddress);
+        formdata.append('subject', subjectLine);
+        formdata.append('priority', '2');
+        formdata.append('status', '2');        
+        formdata.append('type', 'Atira Hotels');
+        formdata.append('attachments[]', $('#myFile')[0].files[0]);
         $.ajax(
           {
-            url: "https://chattechsolutions.freshdesk.com/api/v2/tickets",
+            url: "https://"+yourdomain+".freshdesk.com/api/v2/tickets",
             type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
+            contentType: false,
+            processData: false,
             headers: {
               "Authorization": "Basic " + btoa(api_key + ":x")
             },
-            data: ticket_data,
+            data: formdata,
             success: function(data, textStatus, jqXHR) {
               $('#result').text('Success');
               $('#code').text(jqXHR.status);
@@ -61,37 +71,39 @@ $(document).ready(function(){
 <body>
 
   
-      <img src = "Atira_WebLogo.png"/>
+      
+    <img class= "bannerImage" src = "Atira_WebLogo.png"/>
+    <h1>Support Portal</h1>
 <div class="support">
   <form>
     <div class="fieldgroup fieldgroup-name">
        <label>Name</label>
-       <input type="text" placeholder="Full Name" name="first" required =""/>
+       <input id = "userName" type="text" placeholder="Full Name" name="first" required =""/>
     </div>
     <div class="fieldgroup fieldgroup-site">
        <label>Email</label>
-       <input type="text" placeholder="Email Address"/>
+       <input id = "email" type="text" placeholder="Email Address"/>
     </div>
        <div class="fieldgroup fieldgroup-site">
        <label>Phone</label>
-       <input type="text" placeholder="Best Number To Reach You"/>
+       <input id ="phoneNumber" type="text" placeholder="Best Number To Reach You"/>
     </div>
     <div class="fieldgroup fieldgroup-issue-url">
        <label>Issue</label>
-       <input type="text" placeholder="Summarize Your Issue"/>
+       <input id= "subjectLine" type="text" placeholder="Summarize Your Issue"/>
     </div>
-
 
     <div class="fieldgroup fieldgroup-question">
        <label>Description</label>
-      <textarea></textarea>
+      <textarea id="description"></textarea>
     </div>
-    <input type="submit" value="Submit Ticket" />
+      <button type="submit">Submit Ticket</button>
+
   </form>
 </div>
   
-  <button>Create ticket</button>
-<br/>
+<b>Attachment to be added </b><input type='file' id='myFile' />
+<br>
 <table cellspacing = '10'>
   <tr>
     <td> <b>Result</b></td>
@@ -106,5 +118,7 @@ $(document).ready(function(){
     <td> <div id = 'response'></div> </td>
   </tr>
 </table>
+</body>
+</html>
 
 
