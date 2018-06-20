@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <link rel="stylesheet" href="css/style.css?=v3.5">
+      <link rel="stylesheet" href="css/style.css?=v4">
 
   
 </head>
@@ -18,26 +18,35 @@
 <script>
 $(document).ready(function(){
     $("button").click(
+        
       function() {
+
         var yourdomain = 'chattechsolutions'; // Your freshdesk domain name. Ex., yourcompany
         var api_key = 'Gb30TrNG1EhHoZIE11Q1'; // Ref: https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key
         
-          
+        var successGreen = document.getElementById("success_notification");
+                 
+          var main_area = document.getElementById("main_area");
+ 
+                                        
+
         var emailAddress = document.getElementById("email").value;
         var describeIssue = document.getElementById("description").value;
         var subjectLine = document.getElementById("subjectLine").value;
-        var phoneNumber = document.getElementById("phoneNumber").value;
-        var userName = document.getElementById("userName").value;
-          
+        var phoneNumber = document.getElementById("thisPhone").value;
+        var userName = document.getElementById("thisName").value;
         var formdata = new FormData();
-        formdata.append('description', describeIssue);
+          
+        formdata.append('description', describeIssue + "\n" + "\n" + userName +  "\n" + phoneNumber);
         formdata.append('name', userName);
         formdata.append('email', emailAddress);
+                  
+        formdata.append('phone', phoneNumber);
+
         formdata.append('subject', subjectLine);
         formdata.append('priority', '2');
         formdata.append('status', '2');        
         formdata.append('type', 'Atira Hotels');
-        formdata.append('attachments[]', $('#myFile')[0].files[0]);
         $.ajax(
           {
             url: "https://"+yourdomain+".freshdesk.com/api/v2/tickets",
@@ -52,8 +61,13 @@ $(document).ready(function(){
               $('#result').text('Success');
               $('#code').text(jqXHR.status);
               $('#response').html(JSON.stringify(data, null, "<br/>"));
+                                
+            successGreen.classList.remove("success_notification_hide");
+            main_area.classList.add("success_notification_hide");
+
             },
             error: function(jqXHR, tranStatus) {
+                          
               $('#result').text('Error');
               $('#code').text(jqXHR.status);
               x_request_id = jqXHR.getResponseHeader('X-Request-Id');
@@ -69,59 +83,56 @@ $(document).ready(function(){
 </head>
 <body>
 
-  
+    <div class = "success_notification_hide" id="success_notification">
+  <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+        <h2>Success!</h2>
+        <h3>To submit another ticket, click here</h3>
+    </div>
       
     <img class= "bannerImage" src = "Atira_WebLogo.png"/>
     <h1>Support Portal</h1>
-<div class="support">
+<div class="support" id= "main_area">
   <form>
     <div class="fieldgroup fieldgroup-name">
-       <label>Name</label>
-       <input id = "userName" type="text" placeholder="Full Name" name="first" required =""/>
+       <label class="required">Name</label>
+       <input id = "thisName" type="text" placeholder="Full Name" name="first" required =""/>
     </div>
     <div class="fieldgroup fieldgroup-site">
-       <label>Email</label>
-       <input id = "email" type="text" placeholder="Email Address"/>
+       <label class="required">Email</label>
+       <input id = "email" type="text" placeholder="Email Address" required =""/>
     </div>
-       <div class="fieldgroup fieldgroup-site">
-       <label>Phone</label>
-       <input id ="phoneNumber" type="text" placeholder="Best Number To Reach You"/>
+       
+    <div class="fieldgroup fieldgroup-site">
+       <label class="required">Phone</label>
+       <input id ="thisPhone" type="text" placeholder="Best Number To Reach You" required =""/>
     </div>
     <div class="fieldgroup fieldgroup-issue-url">
-       <label>Issue</label>
-       <input id= "subjectLine" type="text" placeholder="Summarize Your Issue"/>
+       <label class="required">Issue</label>
+       <input id= "subjectLine" type="text" placeholder="Summarize Your Issue" required =""/>
     </div>
 
     <div class="fieldgroup fieldgroup-question">
-       <label>Description</label>
+       <label class="required">Description</label>
       <textarea id="description"></textarea>
+               
+        <label>Attachments</label>
+
+       <input type='file' id='myFile' />
     </div>
           
-      <div class="fieldgroup fieldgroup-question">
+  </form>
+    
+          <div class="fieldgroup fieldgroup-question">
        <label class = "hideMe"></label>
 
       <button type="submit">Submit Ticket</button>
       </div>
 
-  </form>
 </div>
-  
-<b>Attachment to be added </b><input type='file' id='myFile' />
-<br>
-<table cellspacing = '10'>
-  <tr>
-    <td> <b>Result</b></td>
-    <td> <div id = 'result'></div> </td>
-  </tr>
-  <tr>
-    <td> <b>Code</b></td>
-    <td> <div id = 'code'></div> </td>
-  </tr>
-  <tr>
-    <td> <b>Response</b></td>
-    <td> <div id = 'response'></div> </td>
-  </tr>
-</table>
+
+    
+    
+
 </body>
 </html>
 
