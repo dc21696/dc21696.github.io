@@ -1,0 +1,236 @@
+body{
+  background-color:#043464;
+  font-family:Roboto;
+}
+
+h1,h2,h3 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 900;
+    text-align: center;
+}
+
+h1, h2{
+    font-size: 25px;
+    color: dimgrey;
+}
+
+h3{
+        
+    color: white;
+}
+
+.support{
+  max-width:650px;
+  margin:50px auto;
+    background: white;
+    padding: 26px;
+    
+}
+.support *{
+  -webkit-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.support label{
+  width:100px;
+  color:dimgray;
+  display:block;
+  float:left;
+  vertical-align:top;
+  padding:16px 0;
+}
+.support .fieldgroup{
+  margin-bottom:5px;
+}
+.support input,
+.support textarea,
+.support select{
+  padding-left:12px;
+  font-size:13px;
+  width:80%;
+height: 30px;
+  border:none;
+  float:left;
+-webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+-moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+  background:#f9f9f9;
+  border-radius:5px;
+    margin-top: 10px;
+}
+.support select{
+    margin-top: 15px;
+}
+.support input:focus,
+.support textarea:focus{
+  outline-color:#0064FF;
+}
+.fieldgroup{
+  display:block;
+  clear:both;
+  margin-bottom:10px;
+}
+.fieldgroup:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+.fieldgroup-name input{
+  width:80%;
+}
+
+.support textarea{
+  height:200px;
+        resize: none;
+
+}
+.support input[type="submit"]{
+  float:right;
+  color:#fff;
+  font-weight:bold;
+  background:#0064FF;
+  font-size:16px;
+        resize: none;
+
+}
+button{
+  color:#fff;
+    display: block;
+  font-weight:bold;
+  background:#0064FF;
+  font-size:16px;
+      -webkit-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  width:80%;
+    height: 60px;
+    cursor: pointer;
+
+
+}
+.bannerImage{
+        display:block;
+    margin:auto;
+
+}
+label.required:before {content: " *"; color: red;}
+
+
+
+
+
+
+
+
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+.success_notification_hide{
+    display: none;
+}
+
+
+@media only screen and (max-width: 530px) {
+
+    
+    .support input,
+.support textarea,
+.support select{
+  padding:20px;
+  font-size:13px;
+  width:70%;
+    height: 30px;
+  border:none;
+  float:left;
+  
+  background:#f9f9f9;
+  border-radius:2px;
+}
+    
+    .support textarea{
+  height:200px;
+        resize: none;
+
+}
+    button{
+        float: right;
+        width: 70%:
+    }
+    
+    .support{
+        
+    width: 100%;
+    margin:50px auto;
+    background: white;
+    padding: 16px;
+    
+}
+    body{
+        background: white;
+    }
+
+
+}
+
+
+
+#success_notification{
+position: absolute;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+    
+}
+
+.notice{
+    color:#f38430;
+}
