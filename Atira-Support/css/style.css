@@ -50,6 +50,7 @@ height: 30px;
 box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
   background:#f9f9f9;
   border-radius:5px;
+    margin-top: 10px;
 }
 .support select{
     margin-top: 15px;
