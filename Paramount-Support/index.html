@@ -55,8 +55,8 @@
 					main_area.classList.add("success_notification_hide");
 				},
 				error: function(jqXHR, tranStatus) {
-					//alert("Missing some fields! \nMake sure you filled all the information");
-					alert(ticket_data)
+					alert("Missing some fields! \nMake sure you filled all the information");
+					//alert(ticket_data)
 					$('#result').text('Error');
 					$('#code').text(jqXHR.status);
 					x_request_id = jqXHR.getResponseHeader('X-Request-Id');
