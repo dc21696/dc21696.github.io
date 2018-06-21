@@ -194,6 +194,15 @@ label.required:before {content: " *"; color: red;}
         float: right;
         width: 70%:
     }
+    
+    .support{
+        width: 100%;
+    margin:50px auto;
+    background: white;
+    padding: 16px;
+    
+}
+
 
 }
 
