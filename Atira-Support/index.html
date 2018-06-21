@@ -27,7 +27,7 @@
 			var fixedNumber = parseInt(phoneNumber);
 			var describeIssue = document.getElementById("description").value + "<br/><br/>";
 			describeIssue = describeIssue.replace(/\r?\n/g, '<br />');
-			ticket_data = '{ "description" : ' + '"' + describeIssue + "<br/> Name:" + userName + "<br/> Phone:" + phoneNumber + '"' + ',"subject" : ' + '"' + subjectLine + '"' + ', "email" : ' + '"' + emailAddress + '"' + ',"type" : "Atira Hotels",' + '"custom_fields" : {"hotel" : ' + '"' + hotelType + '"' + ', "area_of_problem" : ' + '"' + areaProblem + '",' + '"phone_number" :' + fixedNumber + '} , "priority": 2, "status": 2}'
+			ticket_data = '{ "description" : ' + '"' + describeIssue + "<br/> Name:" + userName + "<br/> Phone:" + phoneNumber + '"' + ',"subject" : ' + '"' + subjectLine + '"' + ', "email" : ' + '"' + emailAddress + '"' + ',"type" : "Atira Hotels",' + '"custom_fields" : {"hotel" : ' + '"' + hotelType + '"' + ', "area_of_problem" : ' + '"' + areaProblem + '",' + '"phone_number" :' + fixedNumber + '} , "priority": 2, "status": 2, "name":' + userName +'}'
 			//API formdata. Appends all the necessary information for JSON to send.   
 			var formdata = new FormData();
 			formdata.append('description', describeIssue + "<br/> <br/> <br/> Name:" + userName + "<br/> Phone:" + phoneNumber);
