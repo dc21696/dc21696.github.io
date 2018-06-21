@@ -4,123 +4,203 @@
 	<meta charset="UTF-8">
 	<title>Atira Help Desk</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport">
-	<link href="css/style.css?=v4" rel="stylesheet">
+	<link href="css/style.css?=v5" rel="stylesheet">
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 	
     <script>
-	$(document).ready(function(){
-	   $("button").click(
-	       
-	     function() {
-
-	       var yourdomain = 'chattechsolutions'; // Your freshdesk domain name. Ex., yourcompany
-	       var api_key = 'Gb30TrNG1EhHoZIE11Q1'; // Ref: https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key
-	       
-            //Gets the SVG for the logo and the main ticket portal
-	       var successGreen = document.getElementById("success_notification");	                
-	       var main_area = document.getElementById("main_area");
-
-	        //Gets all the elements needed to reference for the API                               
-	       var emailAddress = document.getElementById("email").value;
-	       var describeIssue = document.getElementById("description").value;
-	       var subjectLine = document.getElementById("subjectLine").value;
-	       var phoneNumber = document.getElementById("thisPhone").value;
-	       var userName = document.getElementById("thisName").value;
-	       
-             
-         
-           //API formdata. Appends all the necessary information for JSON to send.   
-           var formdata = new FormData();
-	       
-           formdata.append('description', describeIssue + "<br/> <br/> <br/> Name:" + userName + "<br/> Phone:" + phoneNumber);
-	       formdata.append('name', userName);
-	       formdata.append('email', emailAddress);               
-	       formdata.append('phone', phoneNumber);
-	       formdata.append('subject', subjectLine);
-	       formdata.append('priority', '2');
-	       formdata.append('status', '2');        
-	       formdata.append('type', 'Atira Hotels');          
-
-	       $.ajax(
-	         {
-	           url: "https://"+yourdomain+".freshdesk.com/api/v2/tickets",
-	           type: 'POST',
-	           contentType: false,
-	           processData: false,
-	           headers: {
-	             "Authorization": "Basic " + btoa(api_key + ":x")
-	           },
-	           data: formdata,
-	           success: function(data, textStatus, jqXHR) {
-	             $('#result').text('Success');
-	             $('#code').text(jqXHR.status);
-	             $('#response').html(JSON.stringify(data, null, "<br/>"));
-	           
-                   //Hides the ticket submission but notifies you that the information has been sent
-	           successGreen.classList.remove("success_notification_hide");
-	           main_area.classList.add("success_notification_hide");
-
-	           },
-	           error: function(jqXHR, tranStatus) {
-                alert("Missing some fields! \nMake sure you filled all the information")
-	                         
-	             $('#result').text('Error');
-	             $('#code').text(jqXHR.status);
-	             x_request_id = jqXHR.getResponseHeader('X-Request-Id');
-	             response_text = jqXHR.responseText;
-	             $('#response').html(" Error Message : <b style='color: red'>"+response_text+"<\/b>.<br/> Your X-Request-Id is : <b>" + x_request_id + "<\/b>. Please contact support@freshdesk.com with this id for more information.");
-	           }
-	         }
-	       );
-	     }
-	   );
+	$(document).ready(function() {
+		$("button").click(function() {
+			var yourdomain = 'chattechsolutions'; // Your freshdesk domain name. Ex., yourcompany
+			var api_key = 'Gb30TrNG1EhHoZIE11Q1'; // Ref: https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key
+			//Gets the SVG for the logo and the main ticket portal
+			var successGreen = document.getElementById("success_notification");
+			var main_area = document.getElementById("main_area");
+			//Gets all the elements needed to reference for the API                               
+			var emailAddress = document.getElementById("email").value;
+			var subjectLine = document.getElementById("subjectLine").value;
+			var phoneNumber = document.getElementById("thisPhone").value;
+			var userName = document.getElementById("thisName").value;
+			var hotelType = document.getElementById("Hotel_Type").value;
+			var areaProblem = document.getElementById("areaProblem").value;
+			var fixedNumber = parseInt(phoneNumber);
+			var describeIssue = document.getElementById("description").value + "<br/><br/>";
+			describeIssue = describeIssue.replace(/\r?\n/g, '<br />');
+			ticket_data = '{ "description" : ' + '"' + describeIssue + "<br/> Name:" + userName + "<br/> Phone:" + phoneNumber + '"' + ',"subject" : ' + '"' + subjectLine + '"' + ', "email" : ' + '"' + emailAddress + '"' + ',"type" : "Atira Hotels",' + '"custom_fields" : {"hotel" : ' + '"' + hotelType + '"' + ', "area_of_problem" : ' + '"' + areaProblem + '",' + '"phone_number" :' + fixedNumber + '} , "priority": 2, "status": 2}'
+			//API formdata. Appends all the necessary information for JSON to send.   
+			var formdata = new FormData();
+			formdata.append('description', describeIssue + "<br/> <br/> <br/> Name:" + userName + "<br/> Phone:" + phoneNumber);
+			formdata.append('name', userName);
+			formdata.append('email', emailAddress);
+			formdata.append('phone', phoneNumber);
+			formdata.append('subject', subjectLine);
+			formdata.append('priority', '2');
+			formdata.append('status', '2');
+			formdata.append('type', 'Atira Hotels');
+			$.ajax({
+				url: "https://" + yourdomain + ".freshdesk.com/api/v2/tickets",
+				type: 'POST',
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				headers: {
+					"Authorization": "Basic " + btoa(api_key + ":x")
+				},
+				data: ticket_data,
+				success: function(data, textStatus, jqXHR) {
+					$('#result').text('Success');
+					$('#code').text(jqXHR.status);
+					$('#response').html(JSON.stringify(data, null, "<br/>"));
+					//Hides the ticket submission but notifies you that the information has been sent
+					successGreen.classList.remove("success_notification_hide");
+					main_area.classList.add("success_notification_hide");
+				},
+				error: function(jqXHR, tranStatus) {
+					alert("Missing some fields! \nMake sure you filled all the information");
+					//alert(ticket_data)
+					$('#result').text('Error');
+					$('#code').text(jqXHR.status);
+					x_request_id = jqXHR.getResponseHeader('X-Request-Id');
+					response_text = jqXHR.responseText;
+					$('#response').html(" Error Message : <b style='color: red'>" + response_text + "<\/b>.<br/> Your X-Request-Id is : <b>" + x_request_id + "<\/b>. Please contact support@freshdesk.com with this id for more information.");
+				}
+			});
+		});
 	});
-	</script>
+	
+    </script>
     
     
    
-	<div class="success_notification_hide" id="success_notification">
-		<svg class="checkmark" viewbox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-		<circle class="checkmark__circle" cx="26" cy="26" fill="none" r="25"></circle>
-		<path class="checkmark__check" d="M14.1 27.2l7.1 7.2 16.7-16.8" fill="none"></path></svg>
-		<h2>Success!</h2>
-		<h3>To submit another ticket, click here</h3>
-	</div>
-	<div class="support" id="main_area">
-		<img class="bannerImage" src="Atira_WebLogo.png">
-		<h1>Support Portal</h1>
-		<form method="post">
-			<div class="fieldgroup fieldgroup-name">
-				<label class="required">Name</label> 
-                <input id="thisName" name="first" placeholder="Full Name" required="" type="text">
-			</div>
-			<div class="fieldgroup fieldgroup-site">
-				<label class="required">Email</label> 
-                <input id="email" placeholder="Email Address" required="" type="text">
-			</div>
-			<div class="fieldgroup fieldgroup-site">
-				<label class="required">Phone</label> 
-                <input id="thisPhone" placeholder="Best Number To Reach You" required="" type="text">
-			</div>
-			<div class="fieldgroup fieldgroup-issue-url">
-				<label class="required">Issue</label> 
-                <input id="subjectLine" placeholder="Summarize Your Issue" required="" type="text">
-			</div>
-			<div class="fieldgroup fieldgroup-question">
-				<label class="required">Description</label> 
-				<textarea id="description" required =""></textarea> 
-                <label>Attachments</label> 
-                <input id='myFile' type='file'>
-			</div>
-            
-		</form>
-		<div class="fieldgroup fieldgroup-question">
-			<label class="hideMe"></label> 
-            <button type="submit">Submit Ticket</button>
+		<div class="success_notification_hide" id="success_notification">
+			<svg class="checkmark" viewbox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+			<circle class="checkmark__circle" cx="26" cy="26" fill="none" r="25"></circle>
+			<path class="checkmark__check" d="M14.1 27.2l7.1 7.2 16.7-16.8" fill="none"></path></svg>
+			<h2>
+				Success!
+			</h2>
+			<h3>
+				To submit another ticket, click <a href="index.html">here</a>
+			</h3>
 		</div>
-	</div>
-    
-</body>
+		<div class="support" id="main_area">
+			<img class="bannerImage" src="Atira_WebLogo.png">
+			<h1>
+				Support Portal
+			</h1>
+			<p class="notice">
+				Requests will be responded to in 24 hours during business hours or 48 hours on weekends and holidays.<br>
+				<br>
+				PLEASE NOTE: Atira Tech Support is only for Atira Technology Systems. If you have an issue with a brand related system, you must contact the designated franchise support desk.
+			</p>
+			<form method="post">
+				<div class="fieldgroup fieldgroup-name">
+					<label class="required">Name</label> <input id="thisName" name="first" placeholder="Full Name" required="" type="text">
+				</div>
+				<div class="fieldgroup fieldgroup-name">
+					<label class="required">Hotel</label> <select id="Hotel_Type" name="Hotel">
+						<option selected="selected" value="">
+						</option>
+						<option value="Property Owner">
+							Property Owner
+						</option>
+						<option value="Atira Home Office">
+							Atira Home Office
+						</option>
+						<option value="Hampton Inn Carbondale">
+							Hampton Inn Carbondale
+						</option>
+						<option value="Hampton Inn Chicago">
+							Hampton Inn Chicago
+						</option>
+						<option value="Hampton Inn Deer Park">
+							Hampton Inn Deer Park
+						</option>
+						<option value="Hilton Garden Inn Benton Harbor">
+							Hilton Garden Inn Benton Harbor
+						</option>
+						<option value="Holiday Inn Earth City">
+							Holiday Inn Earth City
+						</option>
+						<option value="Holiday Inn St. Louis Airport">
+							Holiday Inn St. Louis Airport
+						</option>
+						<option value="Holiday Inn Express Birmingham">
+							Holiday Inn Express Birmingham
+						</option>
+						<option value="Hyatt House Schaumburg">
+							Hyatt House Schaumburg
+						</option>
+						<option value="Van Buren Shipshewana">
+							Van Buren Shipshewana
+						</option>
+					</select>
+				</div>
+				<div class="fieldgroup fieldgroup-name">
+					<label class="required">Area of Problem</label> <select id="areaProblem" name="AreaProblem">
+						<option selected="selected" value="">
+						</option>
+						<option value="Report Distribution Change Request">
+							Report Distribution Change Request
+						</option>
+						<option value="AtiraNET">
+							AtiraNET
+						</option>
+						<option value="General Computer / iPhone / iPad">
+							General Computer / iPhone / iPad
+						</option>
+						<option value="General Mac">
+							General Mac
+						</option>
+						<option value="Email">
+							E-mail
+						</option>
+						<option value="Slack">
+							Slack
+						</option>
+						<option value="Microsoft Office">
+							Microsoft Office
+						</option>
+						<option value="Daylite">
+							Daylite
+						</option>
+						<option value="mSecure (Password Storage)">
+							mSecure (Password Storage)
+						</option>
+						<option value="Box.com (NetDrive)">
+							Box.com (NetDrive)
+						</option>
+						<option value="Hardware / Peripherals">
+							Hardware / Peripherals
+						</option>
+						<option value="Equipment Request">
+							Equipment Request
+						</option>
+						<option value="Username / Password Request">
+							Username / Password Request
+						</option>
+						<option value="Misc">
+							Misc
+						</option>
+					</select>
+				</div>
+				<div class="fieldgroup fieldgroup-site">
+					<label class="required">Email</label> <input id="email" placeholder="Email Address" required="" type="text">
+				</div>
+				<div class="fieldgroup fieldgroup-site">
+					<label class="required">Phone</label> <input id="thisPhone" placeholder="Best Number To Reach You" required="" type="number">
+				</div>
+				<div class="fieldgroup fieldgroup-issue-url">
+					<label class="required">Issue</label> <input id="subjectLine" placeholder="Summarize Your Issue" required="" type="text">
+				</div>
+				<div class="fieldgroup fieldgroup-question">
+					<label class="required">Description</label> 
+					<textarea id="description" required=""></textarea>
+				</div>
+			</form>
+			<div class="fieldgroup fieldgroup-question">
+				<label class="hideMe"></label> <button type="submit">Submit Ticket</button>
+			</div>
+		</div>
+	</body>
 </html>

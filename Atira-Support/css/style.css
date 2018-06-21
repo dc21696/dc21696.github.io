@@ -15,6 +15,9 @@ h1,h2,h3 {
 .support{
   max-width:650px;
   margin:50px auto;
+    background: white;
+    padding: 26px;
+    
 }
 .support *{
   -webkit-box-sizing:border-box;
@@ -24,7 +27,7 @@ h1,h2,h3 {
 }
 .support label{
   width:100px;
-  color:#aaa;
+  color:dimgray;
   display:block;
   float:left;
   vertical-align:top;
@@ -39,11 +42,17 @@ h1,h2,h3 {
   padding:20px;
   font-size:13px;
   width:80%;
+height: 30px;
   border:none;
   float:left;
-  
+-webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+-moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
   background:#f9f9f9;
-  border-radius:2px;
+  border-radius:5px;
+}
+.support select{
+    margin-top: 15px;
 }
 .support input:focus,
 .support textarea:focus{
@@ -158,6 +167,38 @@ label.required:before {content: " *"; color: red;}
     display: none;
 }
 
+
+@media only screen and (max-width: 530px) {
+
+    
+    .support input,
+.support textarea,
+.support select{
+  padding:20px;
+  font-size:13px;
+  width:70%;
+    height: 30px;
+  border:none;
+  float:left;
+  
+  background:#f9f9f9;
+  border-radius:2px;
+}
+    
+    .support textarea{
+  height:200px;
+        resize: none;
+
+}
+    button{
+        float: right;
+        width: 70%:
+    }
+
+}
+
+
+
 #success_notification{
 position: absolute;
 margin-left: auto;
@@ -165,4 +206,8 @@ margin-right: auto;
 left: 0;
 right: 0;
     
+}
+
+.notice{
+    color:#f38430;
 }
