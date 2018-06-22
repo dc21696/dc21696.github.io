@@ -8,9 +8,13 @@
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-	
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+
     <script>
 	$(document).ready(function() {
+        
+         $("#phone-number").mask("000-000-0000");          
 		$("button").click(function() {
 			var yourdomain = 'chattechsolutions'; // Your freshdesk domain name. Ex., yourcompany
 			var api_key = 'Gb30TrNG1EhHoZIE11Q1'; // Ref: https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key
@@ -20,14 +24,15 @@
 			//Gets all the elements needed to reference for the API                               
 			var emailAddress = document.getElementById("email").value;
 			var subjectLine = document.getElementById("subjectLine").value;
-			var phoneNumber = document.getElementById("thisPhone").value;
+			var phoneNumber = document.getElementById("phone-number").value;
+            var removeNumbercharacters = phoneNumber.replace(/[^a-zA-Z0-9]/g, '');
 			var userName = document.getElementById("thisName").value;
 			var hotelType = document.getElementById("Hotel_Type").value;
 			var areaProblem = document.getElementById("areaProblem").value;
-			var fixedNumber = parseInt(phoneNumber);
+			var fixedNumber = parseInt(removeNumbercharacters);
 			var describeIssue = document.getElementById("description").value + "<br/><br/>";
 			describeIssue = describeIssue.replace(/\r?\n/g, '<br />');
-			ticket_data = '{ "description" : ' + '"' + describeIssue + "<br/> Name:" + userName + "<br/> Phone:" + phoneNumber + '"' + ',"subject" : ' + '"' + subjectLine + '"' + ', "email" : ' + '"' + emailAddress + '"' + ',"type" : "Atira Hotels",' + '"custom_fields" : {"hotel" : ' + '"' + hotelType + '"' + ', "area_of_problem" : ' + '"' + areaProblem + '",' + '"phone_number" :' + fixedNumber + '} , "priority": 2, "status": 2, "name":' + userName +'}'
+			ticket_data = '{ "description" : ' + '"' + describeIssue + "<br/> Name:" + userName + "<br/> Phone:" + phoneNumber + '"' + ',"subject" : ' + '"' + subjectLine + '"' + ', "email" : ' + '"' + emailAddress + '"' + ',"type" : "Atira Hotels",' + '"custom_fields" : {"hotel" : ' + '"' + hotelType + '"' + ', "area_of_problem" : ' + '"' + areaProblem + '",' + '"phone_number" :' + fixedNumber + '} , "priority": 2, "status": 2, "name":' + '"' + userName +'"}'
 			//API formdata. Appends all the necessary information for JSON to send.   
 			var formdata = new FormData();
 			formdata.append('description', describeIssue + "<br/> <br/> <br/> Name:" + userName + "<br/> Phone:" + phoneNumber);
@@ -56,7 +61,7 @@
 					main_area.classList.add("success_notification_hide");
 				},
 				error: function(jqXHR, tranStatus) {
-					alert("Missing some fields! \nMake sure you filled all the information");
+					alert("Missing some fields! \nMake sure you filled out all the information");
 					//alert(ticket_data)
 					$('#result').text('Error');
 					$('#code').text(jqXHR.status);
@@ -188,7 +193,10 @@
 					<label class="required">Email</label> <input id="email" placeholder="Email Address" required="" type="text">
 				</div>
 				<div class="fieldgroup fieldgroup-site">
-					<label class="required">Phone</label> <input id="thisPhone" placeholder="Best Number To Reach You" required="" type="number">
+					<label class="required">Phone</label> 
+                    <input id="phone-number" required="" name="phone-number" type="text" maxlength="14" placeholder="XXX-XXX-XXXX" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" data-mask="000 000 000"/>
+
+
 				</div>
 				<div class="fieldgroup fieldgroup-issue-url">
 					<label class="required">Issue</label> <input id="subjectLine" placeholder="Summarize Your Issue" required="" type="text">

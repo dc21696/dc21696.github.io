@@ -11,11 +11,18 @@ h1,h2,h3 {
     text-align: center;
 }
 
-h1, h2{
+h1{
     font-size: 25px;
     color: dimgrey;
 }
-
+h2{
+       
+    font-size: 25px;
+    color:white;
+}
+a{
+    color:yellow;
+}
 h3{
         
     color: white;
