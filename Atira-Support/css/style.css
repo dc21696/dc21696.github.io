@@ -37,8 +37,8 @@ h1,h2,h3 {
   margin-bottom:5px;
 }
 .support input,
-.support textarea
-{
+.support textarea,
+.support select{
   padding-left:12px;
   font-size:13px;
   width:80%;
@@ -53,17 +53,6 @@ box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
     margin-top: 10px;
 }
 .support select{
-      font-size:13px;
-      width:80%;
-height: 30px;
-  border:none;
-  float:left;
--webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
--moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
-  background:#f9f9f9;
-  border-radius:5px;
-
     margin-top: 15px;
 }
 .support input:focus,
@@ -186,7 +175,7 @@ label.required:before {content: " *"; color: red;}
     .support input,
 .support textarea,
 .support select{
-  padding:20px;
+  padding-left:12px;
   font-size:13px;
   width:70%;
     height: 30px;
