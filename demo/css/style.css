@@ -1,0 +1,260 @@
+html{
+  background-color: lightgrey;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+
+}
+
+.content {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 10vh;
+}
+
+
+#container {
+  margin-top: 5%;
+	text-align: center;
+}
+
+#text {
+	display: inline-block;
+	vertical-align: middle;
+	color: green;
+	letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3em;
+}
+#text:before {
+  color: black;
+  content: "I am a ";
+}
+#cursor {
+	display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+	height: 50px;
+	background-color: green;
+	animation: blink .75s step-end infinite;
+}
+
+@keyframes blink {
+	from, to { 
+		background-color: transparent 
+	}
+	50% { 
+		background-color: green; 
+	}
+}
+
+h2{
+	vertical-align: middle;
+	color: black;
+	letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3em;
+  font-weight: 100;
+  
+}
+
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+a, a:visited {
+    outline: medium none;
+    text-decoration: none;
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+.nav {
+  text-align: left;
+  height: 5vh;
+  padding: 2%;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav li a {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    color: #666666;   
+}
+
+.nav li a:hover, .nav li a:active {
+    color: #B0392E;
+    text-decoration: none;
+}
+
+.nav li.fade a {
+    color: transparent;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}  
+
+
+#avatar {
+  border-radius: 50%;
+  height: 160px;
+}
+
+#scrolly{
+  margin-left: 20%;
+  position:absolute;
+  bottom: 0;
+}
+
+section {
+  width: 100%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 100vh;
+  min-height: 500px;
+}
+section:nth-of-type(2n) {
+    background-color: white;
+  }
+
+.intro {
+  height: 100vh;
+}
+
+
+.l-column{
+    float: left;
+  width: 50%;
+  margin: auto 0;
+}
+
+.text{
+  padding-top: 20vh;
+  
+}
+
+.row:after{
+  
+      content: "";
+  display: table;
+  clear: both;
+  
+
+}
+
+
+h3{
+  font-weight: 900;
+  font-size: 1.4em;
+}
+.answers{
+  color:grey;
+    font-weight: 500;
+
+}
+
+#about-image{
+  display:block;
+  height:100%;
+  width:auto;
+
+
+}
+.about-sec{
+    height: 100vh;
+  overflow: hidden;
+    min-height: 500px;
+
+}
+
+
+
+@media screen and (max-width: 992px) {
+  
+  .l-column{
+    float:none;
+    padding-left: 9px;
+    padding-right: 9px;
+
+  }
+  
+  
+  .about-sec{
+  overflow: visible;
+    width: 80%;
+    height: auto;
+
+}
+  
+  #about-image{
+  height:200px;
+  width:auto;
+
+
+}
+  
+  h1{
+    font-size: 10px;
+  }
+  h2{
+        font-size: 14px;
+
+  }
+  h3{
+        font-size: 10px;
+
+  }
+  p{
+            
+    font-size: 7px;
+
+  }
+  
+  .content{
+    padding-left: 7px;
+  }
+  .nav li a {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    color: #666666;  
+    background-color: white;
+}
+
+
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+ section{
+    height: 1024px;
+  }
+}
+
+/** 
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+  section {
+    height: 768px;
+  }
+}
